@@ -1,10 +1,11 @@
 <div class="class">
-  <h2>Animais:</h2>
+  <h2>Criptomoedas:</h2>
   <ul>
-    <li *ngFor="let animal of animals">Nome: <a routerLink="/list/{{ animal.id }}">{{animal.name}}</a> - Tipo: {{animal.type}}
-      <button (click)="showAge(animal)">Mostrar idade</button>
-      <button (click)="removeAnimal(animal)">Excluir</button>
-    </li>
+    <div class="quadrado">
+
+      <li class="quadrado" *ngFor="let moeda of moedas?.data?.coins"><img class="image-resize" src={{moeda.iconUrl}}> Nome: <a routerLink="/list/{{ moeda.uuid }}">{{moeda.name}}</a> - Rank: {{moeda.rank}}
+      </li>
+    </div>
 
   </ul>
   <h3>{{animalDetails}}</h3>

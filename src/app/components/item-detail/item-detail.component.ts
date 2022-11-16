@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Animal } from 'src/app/interfaces/Animal';
+import { Moeda } from 'src/app/interfaces/Moeda';
 
 import { ListService } from 'src/app/services/list.service';
 
@@ -11,16 +12,15 @@ import { ListService } from 'src/app/services/list.service';
   styleUrls: ['./item-detail.component.css'],
 })
 export class ItemDetailComponent implements OnInit {
-  animal?: Animal;
-
+  moeda?: Moeda;
   constructor(private listService: ListService, private route: ActivatedRoute) {
-    this.getAnimal();
+    this.getMoeda();
   }
 
   ngOnInit(): void {}
 
-  getAnimal() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.listService.getItem(id).subscribe((animal) => this.animal = animal)
+  getMoeda() {
+    const id = String(this.route.snapshot.paramMap.get('id'));
+    this.listService.getMoeda(id).subscribe((moeda) => this.moeda = moeda)
   }
 }

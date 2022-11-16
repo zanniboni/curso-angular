@@ -13,3 +13,14 @@ body {
   padding: 2em;
   margin-bottom: 1em;
 }
+
+.image-resize {
+  height: 50px;
+  width: 50px;
+}
+
+.quadrado {
+  border: 1px solid red;
+  padding: 2em;
+  margin-bottom: 1em;
+}

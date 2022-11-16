@@ -1,5 +1,8 @@
-<div class="class" *ngIf="animal">
-  <p>ID: {{animal.id}}</p>
-  <h1>Nome: {{animal.name}}</h1>
-  <p>Tipo: {{animal.type}}</p>
+<div class="class" *ngIf="moeda">
+  <h1>Nome: {{moeda.data.coin.name}}</h1>
+  <p>ID: {{moeda.data.coin.uuid}}</p>
+  <p>Rank: {{moeda.data.coin.rank}}</p>
+  <p>Price: {{ moeda.data.coin.price }}</p>
+  <div [innerHTML]="moeda.data.coin.description"></div>
+  <img class="image-resize" src={{moeda.data.coin.iconUrl}}>
 </div>

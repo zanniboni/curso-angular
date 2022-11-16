@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from 'src/app/interfaces/Animal';
+import { Moedas } from 'src/app/interfaces/Moedas';
 import { ListService } from 'src/app/services/list.service';
 
 @Component({
@@ -10,8 +11,9 @@ import { ListService } from 'src/app/services/list.service';
 export class ListRenderComponent implements OnInit {
 
   animals: Animal[] = []
+  moedas?: Moedas;
   constructor(private listService: ListService) {
-    this.getAnimals()
+    this.getMoedas()
   }
 
   ngOnInit(): void {
@@ -28,7 +30,11 @@ export class ListRenderComponent implements OnInit {
     this.listService.remove(animal.id).subscribe();
   }
 
-  getAnimals(): void {
-    this.listService.getAll().subscribe((animals) => this.animals = animals);
+  getMoedas(): void {
+    this.listService.getAllMoedas().subscribe((moedas) => this.moedas = moedas)
   }
+
+  // getAnimals(): void {
+  //   this.listService.getAll().subscribe((animals) => this.animals = animals);
+  // }
 }
